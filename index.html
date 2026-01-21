@@ -4,78 +4,276 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Strong Password Generator</title>
-    <link rel="stylesheet" href="style.css">
+
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #111827;
+            --text: #e5e7eb;
+            --muted: #9ca3af;
+            --accent: #22c55e;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            padding: 16px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: var(--card);
+            border-radius: 16px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .lang-switch button {
+            border: none;
+            padding: 8px 14px;
+            border-radius: 10px;
+            cursor: pointer;
+            background: #1f2933;
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+
+        .lang-switch button.active {
+            background: var(--accent);
+            color: #052e16;
+            font-weight: bold;
+        }
+
+        section {
+            margin-bottom: 18px;
+        }
+
+        h2 {
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+            color: var(--accent);
+        }
+
+        p, li {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text);
+        }
+
+        ul {
+            padding-left: 18px;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 16px;
+            }
+
+            h1 {
+                font-size: 1.3rem;
+            }
+
+            h2 {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Privacy Policy</h1>
 
-    <div class="meta">
-        <p><strong>App Name:</strong> Strong Password Generator</p>
-        <p><strong>Developer:</strong> morad laidi</p>
+    <h1>Privacy Policy</h1>
+    <div class="subtitle">
+        Strong Password Generator – Secure Vault<br>
+        Developer: <strong>Morad Laidi</strong>
     </div>
 
-    <p>
-        Strong Password Generator respects your privacy and is committed to protecting it.
-        This Privacy Policy explains how the app handles user data.
-    </p>
+    <div class="lang-switch">
+        <button id="btn-en" class="active" onclick="setLang('en')">English</button>
+        <button id="btn-zh" onclick="setLang('zh')">中文 (Chinese)</button>
+    </div>
 
-    <h2>1. Information Collection</h2>
-    <p>
-        We do not collect, store, or share any personal information.
-        The app works completely offline and does not require account creation,
-        login, or internet access.
-    </p>
+    <!-- ENGLISH -->
+    <div id="lang-en">
+        <section>
+            <h2>1. Information Collection</h2>
+            <p>
+                Strong Password Generator – Secure Vault does not collect, store, or share any personal information.
+                The app works completely offline and does not require account creation, login, or internet access.
+            </p>
+        </section>
 
-    <h2>2. Stored Data</h2>
-    <ul>
-        <li>All passwords and notes are stored locally on your device only</li>
-        <li>No data is uploaded to any server</li>
-        <li>No data is shared with third parties</li>
-        <li>You can delete all saved data at any time from within the app</li>
-    </ul>
+        <section>
+            <h2>2. Stored Data</h2>
+            <p>
+                All generated passwords and saved notes are stored locally on your device using internal storage only.
+            </p>
+            <ul>
+                <li>Passwords are never uploaded to any server</li>
+                <li>Data is never shared with third parties</li>
+                <li>You can delete all saved data at any time within the app</li>
+            </ul>
+        </section>
 
-    <h2>3. Permissions</h2>
-    <p>
-        The app does not request any sensitive permissions.
-        Clipboard access is used only when you choose to copy a password.
-    </p>
+        <section>
+            <h2>3. Permissions</h2>
+            <p>
+                The app does not request sensitive permissions. Clipboard access is used only when the user chooses
+                to copy a password.
+            </p>
+        </section>
 
-    <h2>4. Third-Party Services</h2>
-    <p>This app does not use:</p>
-    <ul>
-        <li>Analytics services</li>
-        <li>Advertising networks</li>
-        <li>Third-party SDKs</li>
-        <li>Tracking tools</li>
-    </ul>
+        <section>
+            <h2>4. Third-Party Services</h2>
+            <p>This app does not use analytics, advertising networks, tracking tools, or third-party SDKs.</p>
+        </section>
 
-    <h2>5. Data Security</h2>
-    <ul>
-        <li>Local-only storage</li>
-        <li>Optional Master PIN protection</li>
-        <li>Temporary password reveal with auto-hide</li>
-    </ul>
+        <section>
+            <h2>5. Data Security</h2>
+            <p>
+                The app provides local-only storage, optional Master PIN protection, and temporary password reveal
+                with auto-hide.
+            </p>
+        </section>
 
-    <h2>6. Children’s Privacy</h2>
-    <p>
-        This app does not collect data from anyone, including children under the age of 13.
-    </p>
+        <section>
+            <h2>6. Children’s Privacy</h2>
+            <p>
+                This app does not collect data from anyone, including children under the age of 13.
+            </p>
+        </section>
 
-    <h2>7. Changes to This Policy</h2>
-    <p>
-        This Privacy Policy may be updated if necessary.
-        Any changes will be reflected within the app or its store listing.
-    </p>
+        <section>
+            <h2>7. Changes to This Policy</h2>
+            <p>
+                This Privacy Policy may be updated if necessary. Any changes will be reflected within the app
+                or its store listing.
+            </p>
+        </section>
 
-    <h2>8. Contact</h2>
-    <p>
-        If you have any questions, contact the developer:
-        <br>
-        <strong>Email:</strong> morad.laidi@gmail.com
-    </p>
+        <section>
+            <h2>8. Contact</h2>
+            <p>
+                Developer: Morad Laidi<br>
+                Email: morad.laidi@gmail.com
+            </p>
+        </section>
+    </div>
+
+    <!-- CHINESE -->
+    <div id="lang-zh" style="display:none;">
+        <section>
+            <h2>1. 信息收集</h2>
+            <p>
+                Strong Password Generator – Secure Vault 不会收集、存储或共享任何个人信息。
+                本应用完全离线运行，无需注册、登录或联网。
+            </p>
+        </section>
+
+        <section>
+            <h2>2. 数据存储</h2>
+            <p>
+                所有生成的密码和保存的内容仅存储在您的设备本地。
+            </p>
+            <ul>
+                <li>密码不会上传到任何服务器</li>
+                <li>不会与任何第三方共享数据</li>
+                <li>您可以随时在应用内删除所有数据</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>3. 权限说明</h2>
+            <p>
+                本应用不请求任何敏感权限。剪贴板权限仅在用户主动复制密码时使用。
+            </p>
+        </section>
+
+        <section>
+            <h2>4. 第三方服务</h2>
+            <p>
+                本应用不使用分析服务、广告服务、跟踪工具或第三方 SDK。
+            </p>
+        </section>
+
+        <section>
+            <h2>5. 数据安全</h2>
+            <p>
+                应用采用本地存储方式，并提供可选的主 PIN 码保护和临时密码显示功能。
+            </p>
+        </section>
+
+        <section>
+            <h2>6. 儿童隐私</h2>
+            <p>
+                本应用不会收集任何人的数据，包括 13 岁以下的儿童。
+            </p>
+        </section>
+
+        <section>
+            <h2>7. 隐私政策更新</h2>
+            <p>
+                如有必要，我们可能会更新本隐私政策，更新内容将在应用或应用商店页面中显示。
+            </p>
+        </section>
+
+        <section>
+            <h2>8. 联系方式</h2>
+            <p>
+                开发者：Morad Laidi<br>
+                邮箱：morad.laidi@gmail.com
+            </p>
+        </section>
+    </div>
+
+    <div class="footer">
+        © 2026 Strong Password Generator – Secure Vault
+    </div>
+
 </div>
+
+<script>
+    function setLang(lang) {
+        document.getElementById("lang-en").style.display = lang === "en" ? "block" : "none";
+        document.getElementById("lang-zh").style.display = lang === "zh" ? "block" : "none";
+
+        document.getElementById("btn-en").classList.toggle("active", lang === "en");
+        document.getElementById("btn-zh").classList.toggle("active", lang === "zh");
+    }
+</script>
 
 </body>
 </html>
